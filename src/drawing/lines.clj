@@ -6,15 +6,17 @@
   (q/color-mode :rgb))
 
 (defn draw []
-  (q/stroke 0 0 255)
-  (q/line 300 0 (q/mouse-x) (q/mouse-y))
+  (q/stroke (* 255 (/ (q/mouse-x) 500)) 0 0)
+  (q/line 0 0 (q/mouse-x) (q/mouse-y))
 
-  ;; (q/line 300 6 (q/mouse-x) (q/mouse-y))
+  (q/stroke 0 0 (* 255 (/ (q/mouse-x) 500)))
+  (q/line 200 0 (q/mouse-x) (q/mouse-y))
 
-  ;; (q/line 6 500 (q/mouse-x) (q/mouse-y))
+  (q/stroke (* 255 (/ (q/mouse-x) 500)) (* 255 (/ (q/mouse-x) 500)) 0)
+  (q/line 0 200 (q/mouse-x) (q/mouse-y))
 
-  (q/stroke 0 255 0)
-  (q/line 300 500 (q/mouse-x) (q/mouse-y)))
+  (q/stroke 0 (* 255 (/ (q/mouse-y) 500)) 0)
+  (q/line 200 200 (q/mouse-x) (q/mouse-y)))
 
 
 (q/defsketch hello-lines
@@ -28,3 +30,4 @@
   :draw draw
 
   :features [:keep-on-top])
+
