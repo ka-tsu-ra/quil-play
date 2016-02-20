@@ -3,14 +3,28 @@
 
 (defn setup []
   (q/frame-rate 30)
-  (q/color-mode :rgb)
-  (q/stroke 255 0 0))
+  (q/color-mode :rgb))
 
 (defn draw []
-  (q/line 0 0 (q/mouse-x) (q/mouse-y))
+  (q/stroke 0 0 255)
+  (q/line 300 0 (q/mouse-x) (q/mouse-y))
 
-  (q/line 200 0 (q/mouse-x) (q/mouse-y))
+  ;; (q/line 300 6 (q/mouse-x) (q/mouse-y))
 
-  (q/line 0 200 (q/mouse-x) (q/mouse-y))
+  ;; (q/line 6 500 (q/mouse-x) (q/mouse-y))
 
-  (q/line 200 200 (q/mouse-x) (q/mouse-y)))
+  (q/stroke 0 255 0)
+  (q/line 300 500 (q/mouse-x) (q/mouse-y)))
+
+
+(q/defsketch hello-lines
+
+  :title "You can see lines"
+
+  :size [500 500]
+
+  :setup setup
+
+  :draw draw
+
+  :features [:keep-on-top])
